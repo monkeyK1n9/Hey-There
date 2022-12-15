@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "438413626390",
+    "project_id": "hey-there-aff5d",
+    "storage_bucket": "hey-there-aff5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438413626390:android:1d10b0e47337da539df937",
+        "android_client_info": {
+          "package_name": "com.monkeyk1n9.heythere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438413626390-e4a4br7v90hc52h7a8ir8k4al8naufee.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monkeyk1n9.heythere",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "438413626390-sl6d91khaq09lijma2m0nmcrok6hsfoq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeXKQPDkgTVQw6EDfnsysLNF9bKSpCe3I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438413626390-sl6d91khaq09lijma2m0nmcrok6hsfoq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
