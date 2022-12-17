@@ -1,6 +1,7 @@
-# CRAMBLE-REACTNATIVE
+# Hey There
 
-This is the react native project for Cramble. It is built with expo react native (expo.dev).
+This is the react native project for Hey There. It is built with expo react native (expo.dev). Hey there is
+a messaging mobile app, to send text messages to your friends who are 1km maximum away from you.
 
 ## Introduction
 
@@ -26,24 +27,21 @@ npx expo start
 
 Now you are good to go.
 
-## Connecting to the database
+## Editing the .env file
 
-To connect your app to the database, make sure you have a .env file in your project.
-If you don't have a .env file, create one, and provide the required parameters.
-
-1- URL of the database
-The URL of the database should be the provided in the .env file.
-If you are working locally, the URL will be:
+This project works with firebase as backend and Mapbox for setting up the MapScreen.
+To continue development, you will need to provide the following:
 
 ```js
-DATABASE_URL = http://<Your PC ip adress>:<port number>/api/<version number>
-//the port number should be the same provided in the backend
-```
+// Firebase config
+FIREBASE_API_KEY =
+FIREBASE_AUTH_DOMAIN =
+FIREBASE_PROJECT_ID =
+FIREBASE_STORAGE_BUCKET =
+FIREBASE_MESSAGING_SENDER_ID =
+FIREBASE_APP_ID =
 
-Example:
-
-```js
-DATABASE_URL = http://199.58.48.34/3001/api/v1
+// Mapbox config
 ```
 
 # Contributions
