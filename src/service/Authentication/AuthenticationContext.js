@@ -61,11 +61,21 @@ export const AuthenticationContextProvider = ({children}) => {
 
     const createUserDatabase = async (id, username) => {
         try {
+            if (Device.isDevice) {
+                await setDoc(doc(db, "users", id), {
+                    data: {
+                        id,
+                        username,
+                        expoPushToken
+                    }
+                })
+                return
+            }
+
             await setDoc(doc(db, "users", id), {
                 data: {
                     id,
-                    username,
-                    expoPushToken
+                    username
                 }
             })
         }
@@ -114,11 +124,19 @@ export const AuthenticationContextProvider = ({children}) => {
             setError('Error: Password must match')
             return
         }
+        if(userName == '' || email == '' || password == '' || confirmPassword == '') {
+            setError('Error: All fields need to be filled')
+            return
+        }
+        if(password.length < 6) {
+            setError('Error: Password must be at least 6 characters')
+            return
+        }
         createAccountRequest(email, password)
             .then ((u) => {
                 updateProfile(auth.currentUser, {displayName: userName})
                 setUser(u)
-                createUserDatabase(user.uid, userName)
+                createUserDatabase(auth.currentUser.uid, userName)
                 setIsAuthenticated(true)
                 ToastAndroid.show('Accounted created', ToastAndroid.SHORT)
                 setIsLoading(false)

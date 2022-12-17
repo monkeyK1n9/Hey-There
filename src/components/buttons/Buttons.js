@@ -13,7 +13,7 @@ export const RectPrimaryButton = ({type='content' || 'full', title, pressAction,
             onPress={pressAction}
         >
             <RectPrimaryButtonView style={{width: type == 'full' && 0.92*Dimensions.get('window').width}}>
-                {isLoading ? 
+                {!isLoading ? 
                     <ActivityIndicator animating={true} size={20} color={theme.colors.ui.quaternary} />
                     :
                     <Text variant="bodyWhite">{title}</Text>

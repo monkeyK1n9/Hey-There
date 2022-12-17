@@ -70,15 +70,15 @@ export const HomeScreen = ({navigation}) => {
 
     }
 
-    const openDiscussion = (roomId) => {
-        navigation.navigate('Chat', {roomId: roomId})
+    const openDiscussion = (roomId, userImageUrl, senderName) => {
+        navigation.navigate('Chat', {roomId: roomId, userImageUrl: userImageUrl, senderName: senderName})
     }
 
     // welcome modal
     useEffect(() => {
         //for development only
         // AsyncStorage.removeItem('isFirstOpened')
-
+        console.log(discussionsList)
         AsyncStorage.getItem('isFirstOpened')
         .then((value) => {
             if (value == null) {
@@ -144,16 +144,33 @@ export const HomeScreen = ({navigation}) => {
             </Modal>
             <FlashList
                 data={discussionsList}
-                renderItem={({ item }) =>
-                    <>
-                        <TouchableOpacity
-                            activeOpacity={0.8}
-                            onPress={() => openDiscussion(item.roomId)}
-                        >
-                            <DiscussionCard discussion={item} />
-                        </TouchableOpacity>
-                    </>
-                }
+                renderItem={({ item }) =>{
+                    // console.log(discussionsList)
+
+                    if (item == {}) {
+                        return (
+                            <>
+                                <TouchableOpacity
+                                    activeOpacity={0.8}
+                                    onPress={() => openDiscussion(item.roomId)}
+                                >
+                                    <DiscussionCard discussion={item} />
+                                </TouchableOpacity>
+                            </>
+                        )
+                    }
+                    return (
+                        <>
+                            <ContentView
+                                style={{width: Dimensions.get('window').width, height:0.75*Dimensions.get('window').height}}
+                            >
+                                <Text variant="title">No chat</Text>
+                                <Spacer size="medium" />
+                                <Text>Add a new discussion</Text>
+                            </ContentView>
+                        </>
+                    )
+                }}
                 estimatedItemSize={100}
                 ListEmptyComponent={() => {
                     return (

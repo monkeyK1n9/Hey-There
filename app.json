@@ -35,9 +35,9 @@
         }
       ]
     ]
-    // ],
-    // "runtimeVersion": {
-    //   "policy": "sdkVersion"
-    // }
+    ,
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
   }
 }

@@ -9,7 +9,7 @@ const messagesRequest = async (id) => {
             if (!snapshot) {
                 resolve(messagesList)
             }
-            messagesList.push(snapshot.data().data[0]);
+            messagesList.push(snapshot.data()?.data[0]);
         
             if(messagesList.length === 0){
                 return reject("Nothing found")

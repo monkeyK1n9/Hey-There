@@ -9,7 +9,7 @@ const discussionsRequest = async (id) => {
             if (!snapshot) {
                 resolve(discussionsList)
             }
-            discussionsList.push(snapshot.data().data[0]);
+            discussionsList.push(snapshot.data()?.data[0]);
         
             if(discussionsList.length === 0){
                 return reject("Nothing found")

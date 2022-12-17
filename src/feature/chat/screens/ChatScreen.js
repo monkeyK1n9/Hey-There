@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {View} from 'react-native'
+import {TouchableOpacity, View} from 'react-native'
 import { Text } from '../../../components/typography/TextComponent';
 import { FlashList } from "@shopify/flash-list";
 import {CircPrimaryButton} from '../../../components/buttons/Buttons'
@@ -32,6 +32,10 @@ export const ChatScreen = ({navigation, route}) => {
 
     const {roomId} = route.params
 
+    const sendMessage = (message) => {
+
+    }
+
     useEffect(() => {
         fetchMessages(roomId)
         .then((response) => {
@@ -63,7 +67,12 @@ export const ChatScreen = ({navigation, route}) => {
                     onChangeText={(t) => setTextMessage(t)}
                 />
                 <Spacer size="medium" position="left"/>
-                <FontAwesome name="send" size={28} color={theme.colors.ui.quaternary} />
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    onPress={() => sendMessage(textMessage)}
+                >
+                    <FontAwesome name="send" size={28} color={theme.colors.ui.quaternary} />
+                </TouchableOpacity>
             </BottomView>
         </>
     )

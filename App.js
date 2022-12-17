@@ -13,6 +13,10 @@ import {theme} from './src/infrastructure/theme'
 import {Outfit_400Regular, useFonts as useRoboto} from "@expo-google-fonts/outfit"
 import { AuthenticationContextProvider } from './src/service/Authentication/AuthenticationContext';
 
+import {enableLatestRenderer} from 'react-native-maps';
+
+enableLatestRenderer();
+
 
 export default function App() {
   const [outfitLoaded] = useRoboto({Outfit_400Regular})

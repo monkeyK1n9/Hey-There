@@ -8,6 +8,7 @@ import { ChatScreen } from '../../feature/chat/screens/ChatScreen'
 import {SafeAreaViewSection} from '../../components/safeArea/SafeAreaViewSection'
 import { ScreenHeader } from '../../components/screenHeader/ScreenHeader';
 import { DiscussionContextProvider } from '../../service/Discussion/DiscussionContext';
+import { Header } from '../../feature/chat/components/header/Header';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -19,6 +20,7 @@ const HomeTabs = () => {
             <ScreenHeader title={'Home'}/>
             <Tab.Navigator
                 screenOptions={({route}) => ({
+                    animationEnabled: true,
                     tabBarActiveTintColor: theme.colors.text.primary,
                     tabBarInactiveTintColor: theme.colors.ui.secondary,
                     tabBarHideOnKeyboard: true,
@@ -47,7 +49,9 @@ export const AppNavigation = () => {
                 <DiscussionContextProvider>
                     <Stack.Navigator>
                             <Stack.Screen name="HomeTabs" component={HomeTabs} options={{headerShown: false, }}/>
-                            <Stack.Screen name="Chat" component={ChatScreen} options={{headerShown: false, }}/>
+                            <Stack.Screen name="Chat" component={ChatScreen} options={({route}) => ({
+                                headerTitle: () => <Header userImageUrl={route.params.userImageUrl} senderName={route.params.senderName} />
+                            })}/>
                     </Stack.Navigator>
                 </DiscussionContextProvider>
             </SafeAreaViewSection>
