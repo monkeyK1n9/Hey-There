@@ -136,7 +136,7 @@ export const CreateAccountScreen = ({navigation}) => {
                 <RectPrimaryButton
                     type="full"
                     title='Create Account'
-                    isLoading={isLoading}
+                    isLoading={!isLoading}
                     pressAction={() => {
                         if(checked) {
                             setErrorAgree(false)

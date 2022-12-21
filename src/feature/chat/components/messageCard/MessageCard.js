@@ -12,12 +12,12 @@ export const MessageCard = ({messageContent, user}) => {
         to,
         time
     } = messageContent
-    const date = new Date(time.seconds * 1000)
-    // console.log(user.uid)
+    const date = new Date(time)
+    // console.log(time)
     return (
         <>
             {
-                from == user?.uid ? (
+                from != user?.uid ? (
                     <MessageCardView>
                         <MessageContentView
                             style={{

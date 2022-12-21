@@ -9,7 +9,7 @@ export const MessageCardView = styled(View)`
 export const MessageContentView = styled(View)`
     max-width: 75%;
     padding: ${props => props.theme.space[2]};
-    margin-vertical: ${props => props.theme.space[2]};
+    margin-vertical: ${props => props.theme.space[1]};
     border-top-left-radius: ${props => props.theme.space[2]};
     border-top-right-radius: ${props => props.theme.space[2]};
     position: relative

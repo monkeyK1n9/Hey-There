@@ -5,7 +5,6 @@ import { Text } from '../../../../components/typography/TextComponent';
 import { HeaderView } from './HeaderStyle';
 
 export const Header = ({userImageUrl, senderName}) => {
-    console.log(senderName);
     return (
         <HeaderView>
             {userImageUrl ? (

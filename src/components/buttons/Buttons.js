@@ -6,18 +6,18 @@ import { CircPrimaryButtonView, CircSecondaryButtonView, RectPrimaryButtonView, 
 import { Feather, Ionicons } from '@expo/vector-icons'
 import { theme } from '../../infrastructure/theme';
 
-export const RectPrimaryButton = ({type='content' || 'full', title, pressAction, isLoading=false}) => {
+export const RectPrimaryButton = ({type='full', title, pressAction, isLoading}) => {
     return (
         <TouchableOpacity
             activeOpacity={0.8}
             onPress={pressAction}
         >
-            <RectPrimaryButtonView style={{width: type == 'full' && 0.92*Dimensions.get('window').width}}>
-                {!isLoading ? 
-                    <ActivityIndicator animating={true} size={20} color={theme.colors.ui.quaternary} />
+            <RectPrimaryButtonView style={{width: type == 'full' ? 0.92*Dimensions.get('window').width : "92%"}}>
+                {isLoading ? 
+                    (<ActivityIndicator animating={true} size={20} color={theme.colors.ui.quaternary} />)
                     :
-                    <Text variant="bodyWhite">{title}</Text>
-}
+                    (<Text variant="bodyWhite" style={{paddingHorizontal: 50}}>{title}</Text>)
+                }
             </RectPrimaryButtonView>
         </TouchableOpacity>
     )
@@ -29,9 +29,9 @@ export const RectSecondaryButton = ({type, title, pressAction, isLoading=false})
             activeOpacity={0.8}
             onPress={pressAction}
         >
-            <RectSecondaryButtonView style={{width: type == 'full' && '95%'}}>
+            <RectSecondaryButtonView style={{width: type == 'full' ? 0.92*Dimensions.get('window').width : "100%", paddingVertical: 16}}>
                 {!isLoading ? 
-                    (<Text variant="bodyPrimary">{title}</Text>)
+                    (<Text variant="bodyPrimary" style={{paddingHorizontal: 60}}>{title}</Text>)
                     :
                     (<ActivityIndicator animating={true} size={35} color={theme.colors.ui.primary} />)
                 }

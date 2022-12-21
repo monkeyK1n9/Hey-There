@@ -88,7 +88,7 @@ export const LoginScreen = ({navigation}) => {
                 <RectPrimaryButton
                     type="full"
                     title='Login'
-                    isLoading={isLoading}
+                    isLoading={!isLoading}
                     pressAction={() => onLogin(email, password)}
                 />
                 <Spacer size="large" />

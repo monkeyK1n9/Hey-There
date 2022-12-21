@@ -8,9 +8,30 @@ import { ResetPasswordScreen } from '../../feature/account/screens/ResetPassword
 import { TermsAndConditionsScreen } from '../../feature/account/screens/TermsAndConditionsScreen';
 import {SafeAreaViewSection} from '../../components/safeArea/SafeAreaViewSection'
 
+
 const Stack = createStackNavigator();
 
-export const AccountNavigation = () => {
+export const AccountNavigationFirst = () => {
+
+    return (
+        <>
+            <SafeAreaViewSection>
+                <Stack.Navigator>
+                    <Stack.Screen name='Onboarding' component={OnboardingScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Create Account" component={CreateAccountScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Forgot Password" component={ForgotPasswordScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="OTP" component={OTPScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Reset" component={ResetPasswordScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Terms And Conditions" component={TermsAndConditionsScreen} />
+                </Stack.Navigator>
+            </SafeAreaViewSection>
+        </>
+    )
+}
+
+export const AccountNavigationSecond = () => {
+
     return (
         <>
             <SafeAreaViewSection>
@@ -20,7 +41,6 @@ export const AccountNavigation = () => {
                     <Stack.Screen name="Forgot Password" component={ForgotPasswordScreen} options={{headerShown: false}} />
                     <Stack.Screen name="OTP" component={OTPScreen} options={{headerShown: false}} />
                     <Stack.Screen name="Reset" component={ResetPasswordScreen} options={{headerShown: false}} />
-                    <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} options={{headerShown: false}} />
                     <Stack.Screen name="Terms And Conditions" component={TermsAndConditionsScreen} />
                 </Stack.Navigator>
             </SafeAreaViewSection>

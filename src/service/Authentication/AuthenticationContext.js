@@ -66,8 +66,13 @@ export const AuthenticationContextProvider = ({children}) => {
                     data: {
                         id,
                         username,
-                        expoPushToken
+                        expoPushToken,
+                        latitude: "",
+                        longitude: "",
                     }
+                })
+                await setDoc(doc(db, "discussionsList", id), {
+                    data: []
                 })
                 return
             }
@@ -75,8 +80,14 @@ export const AuthenticationContextProvider = ({children}) => {
             await setDoc(doc(db, "users", id), {
                 data: {
                     id,
-                    username
+                    username,
+                    latitude: "",
+                    longitude: "",
                 }
+            })
+
+            await setDoc(doc(db, "discussionsList", id), {
+                data: []
             })
         }
         catch (err) {

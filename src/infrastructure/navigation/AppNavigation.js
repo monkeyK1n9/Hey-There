@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useEffect, useState} from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import {theme} from '../theme'
@@ -9,6 +9,7 @@ import {SafeAreaViewSection} from '../../components/safeArea/SafeAreaViewSection
 import { ScreenHeader } from '../../components/screenHeader/ScreenHeader';
 import { DiscussionContextProvider } from '../../service/Discussion/DiscussionContext';
 import { Header } from '../../feature/chat/components/header/Header';
+
 
 const Tab = createMaterialTopTabNavigator();
 

@@ -10,13 +10,14 @@ import { ActivityIndicator } from 'react-native-paper';
 
 import styled from 'styled-components/native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getAuth } from 'firebase/auth';
 
 import {theme} from '../../../infrastructure/theme'
 
 import {AuthenticationContext} from '../../../service/Authentication/AuthenticationContext'
 import { DiscussionContext } from '../../../service/Discussion/DiscussionContext';
 
-
+const auth = getAuth()
 const ButtonView = styled(View)`
     position: absolute;
     bottom: 24px;
@@ -67,18 +68,25 @@ export const HomeScreen = ({navigation}) => {
     const [isFirstOpened, setIsFirstOpened] = useState(false)
 
     const addDiscussion = () => {
-
+        navigation.navigate('Map')
     }
 
-    const openDiscussion = (roomId, userImageUrl, senderName) => {
-        navigation.navigate('Chat', {roomId: roomId, userImageUrl: userImageUrl, senderName: senderName})
+    const openDiscussion = (item) => {
+        const {
+            id,
+            lastMessage,
+            roomId,
+            sender,
+            userImageUrl,
+            username,
+        } = item
+        navigation.navigate('Chat', {roomId: roomId, userImageUrl: userImageUrl, senderName: sender, senderId: id, lastMessage: lastMessage, username: username})
     }
 
     // welcome modal
     useEffect(() => {
         //for development only
         // AsyncStorage.removeItem('isFirstOpened')
-        console.log(discussionsList)
         AsyncStorage.getItem('isFirstOpened')
         .then((value) => {
             if (value == null) {
@@ -124,7 +132,7 @@ export const HomeScreen = ({navigation}) => {
                         <Spacer size="medium" />
 
                         <ScrollView showsVerticalScrollIndicator={false}>
-                            <Text>Welcome {user?.displayName}, you can now connect with your friends around you.</Text>
+                            <Text>Welcome {auth.currentUser?.displayName || user?.displayName}, you can now connect with your friends around you.</Text>
                             <Spacer size="small" />
                             <Text>Start by looking for your friends, chat, have fun!</Text>
                             <Spacer size="large" />
@@ -145,14 +153,13 @@ export const HomeScreen = ({navigation}) => {
             <FlashList
                 data={discussionsList}
                 renderItem={({ item }) =>{
-                    // console.log(discussionsList)
 
-                    if (item == {}) {
+                    if (item.lastMessage?.length > 0) {
                         return (
                             <>
                                 <TouchableOpacity
                                     activeOpacity={0.8}
-                                    onPress={() => openDiscussion(item.roomId)}
+                                    onPress={() => openDiscussion(item)}
                                 >
                                     <DiscussionCard discussion={item} />
                                 </TouchableOpacity>
@@ -191,7 +198,7 @@ export const HomeScreen = ({navigation}) => {
             <ButtonView>
                 <CircPrimaryButton
                     icon='plus'
-                    // pressAction={() => setOpenModal(true)}
+                    pressAction={() => addDiscussion()}
                 />
             </ButtonView>
         </>

@@ -35,9 +35,5 @@
         }
       ]
     ]
-    ,
-    "runtimeVersion": {
-      "policy": "sdkVersion"
-    }
   }
 }
