@@ -7,14 +7,14 @@ a messaging mobile app, to send text messages to your friends who are 1km maximu
 Here are some screenshots
 <div>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/91855362/208896666-f3601e2f-b2e3-4aeb-8327-0901a9d5cadb.png" title="Splash screen" width="300" />
-<img src="https://user-images.githubusercontent.com/91855362/208896703-50bb490b-e1f4-49f3-9bfd-9edca0fd1b11.png" title="Onboarding screen" width="300" />
-<img src="https://user-images.githubusercontent.com/91855362/208896739-a80f2946-41e5-45d8-9c83-cad92e6cb9c3.png" title="Chat screen" width="300" />
+<img src="https://user-images.githubusercontent.com/91855362/208896666-f3601e2f-b2e3-4aeb-8327-0901a9d5cadb.png" title="Splash screen" width="275" />
+<img src="https://user-images.githubusercontent.com/91855362/208896703-50bb490b-e1f4-49f3-9bfd-9edca0fd1b11.png" title="Onboarding screen" width="275" />
+<img src="https://user-images.githubusercontent.com/91855362/208896739-a80f2946-41e5-45d8-9c83-cad92e6cb9c3.png" title="Chat screen" width="275" />
 </p>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/91855362/208896783-27e162a6-b6f4-4593-9e26-46cb1d510a4b.png" title="Map screen" width="300" />
-<img src="https://user-images.githubusercontent.com/91855362/208896923-1ac931f7-fa26-42bc-b821-66296352a819.png" title="Create Account screen" width="300" />
-<img src="https://user-images.githubusercontent.com/91855362/208896946-c7cbd722-4059-485a-a4be-a8c9b3610ac1.png" title="Home screen" width="300" />
+<img src="https://user-images.githubusercontent.com/91855362/208896783-27e162a6-b6f4-4593-9e26-46cb1d510a4b.png" title="Map screen" width="275" />
+<img src="https://user-images.githubusercontent.com/91855362/208896923-1ac931f7-fa26-42bc-b821-66296352a819.png" title="Create Account screen" width="275" />
+<img src="https://user-images.githubusercontent.com/91855362/208896946-c7cbd722-4059-485a-a4be-a8c9b3610ac1.png" title="Home screen" width="275" />
 
 
 ## Introduction
