@@ -119,7 +119,7 @@ export const MapScreen = ({navigation}) => {
                 await searchUsers(auth.currentUser?.uid || user.uid)
             }
             catch (err) {
-                console.error(err)
+                // console.error(err)
             }
     
         }

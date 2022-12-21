@@ -132,7 +132,7 @@ export const HomeScreen = ({navigation}) => {
                         <Spacer size="medium" />
 
                         <ScrollView showsVerticalScrollIndicator={false}>
-                            <Text>Welcome {auth.currentUser?.displayName || user?.displayName}, you can now connect with your friends around you.</Text>
+                            <Text>Welcome {auth.currentUser?.displayName || user.displayName}, you can now connect with your friends around you.</Text>
                             <Spacer size="small" />
                             <Text>Start by looking for your friends, chat, have fun!</Text>
                             <Spacer size="large" />

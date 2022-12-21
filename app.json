@@ -38,6 +38,12 @@
     "extra": {
       "eas": {
         "projectId": "e0dfad4f-d580-4f37-b5e2-cb0675d29fb0"
+      },
+      "expo_go": {
+        "runtimeVersion": {  "policy": "sdkVersion"  }
+      },
+      "build": {  
+        "runtimeVersion": "1.0.0" 
       }
     }
   }
