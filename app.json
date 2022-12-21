@@ -34,6 +34,11 @@
           "icon": "./assets/icon.png"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e0dfad4f-d580-4f37-b5e2-cb0675d29fb0"
+      }
+    }
   }
 }
