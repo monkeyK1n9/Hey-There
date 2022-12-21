@@ -4,6 +4,16 @@ This is the react native project for Hey There. It is built with expo react nati
 a messaging mobile app, to send text messages to your friends who are 1km maximum away from you.
 
 ## Screenshots
+Here are some screenshots
+
+| Splash Screen | Onboarding Screen | Chat Screen |
+|---------------| ------------------|-------------|
+| ![](https://user-images.githubusercontent.com/91855362/208896666-f3601e2f-b2e3-4aeb-8327-0901a9d5cadb.png) | ![](https://user-images.githubusercontent.com/91855362/208896703-50bb490b-e1f4-49f3-9bfd-9edca0fd1b11.png) | ![](https://user-images.githubusercontent.com/91855362/208896739-a80f2946-41e5-45d8-9c83-cad92e6cb9c3.png) | 
+
+| Map Screen | Create Account | Home Screen |
+|------------|----------------|-------------|
+|![](https://user-images.githubusercontent.com/91855362/208896783-27e162a6-b6f4-4593-9e26-46cb1d510a4b.png) | ![](https://user-images.githubusercontent.com/91855362/208896923-1ac931f7-fa26-42bc-b821-66296352a819.png) | ![](https://user-images.githubusercontent.com/91855362/208896946-c7cbd722-4059-485a-a4be-a8c9b3610ac1.png) |
+
 
 ## Introduction
 
@@ -38,7 +48,7 @@ Now you are good to go.
 
 ## Editing the .env file
 
-This project works with firebase as backend and Mapbox for setting up the MapScreen.
+This project works with firebase as backend and Google Maps for setting up the MapScreen.
 To continue development, you will need to provide the following:
 
 ```js
