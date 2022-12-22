@@ -14,22 +14,18 @@ export const AuthenticationContextProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false)
 
     const createUserDatabase = async (id, username) => {
-        try {
-            await setDoc(doc(db, "users", id), {
-                data: {
-                    id,
-                    username,
-                    location: []
-                }
-            })
+        await setDoc(doc(db, "users", id), {
+            data: {
+                id,
+                username,
+                location: []
+            }
+        })
 
-            await setDoc(doc(db, "discussionsList", id), {
-                data: []
-            })
-        }
-        catch (err) {
-            console.error(err)
-        }
+        await setDoc(doc(db, "discussionsList", id), {
+            data: []
+        })
+        
     }
 
     const auth = getAuth();

@@ -97,6 +97,7 @@ export const HomeScreen = ({navigation}) => {
         })
     }, [])
 
+
     return (
         <>
             {isFirstOpened && !discussionsList && (

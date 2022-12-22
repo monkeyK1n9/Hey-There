@@ -18,16 +18,23 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 enableLatestRenderer();
 
-
 export default function App() {
   const [outfitLoaded] = useRoboto({Outfit_400Regular})
-  const [isUser, setIsUser] = useState(true);
+  const [isUser, setIsUser] = useState(false);
   const [isFirstOpenTime, setIsFirstOpenTime] = useState(false)
 
   const auth = getAuth();
 
 
   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsUser(true)
+      } else {
+        setIsUser(false)
+      }
+    })
+    
     // AsyncStorage.removeItem('isFirstOpenTime')
     AsyncStorage.getItem('isFirstOpenTime')
     .then((val) => {
@@ -35,13 +42,6 @@ export default function App() {
         AsyncStorage.setItem('isFirstOpenTime', 'True')
         setIsFirstOpenTime(true)
         return
-      }
-    })
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setIsUser(true)
-      } else {
-        setIsUser(false)
       }
     })
   }, [])
@@ -64,7 +64,7 @@ export default function App() {
             </NavigationContainer>
           ):(
             <NavigationContainer>
-              {isUser ? <AppNavigation /> : <AccountNavigationSecond />}
+              {!isUser ? <AccountNavigationSecond /> : <AppNavigation />}
             </NavigationContainer>
           )}
         </AuthenticationContextProvider>

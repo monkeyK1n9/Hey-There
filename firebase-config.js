@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore";
+import {getFirestore, initializeFirestore} from "firebase/firestore";
 import {
   FIREBASE_API_KEY,
   FIREBASE_AUTH_DOMAIN,
@@ -25,4 +25,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 //creating database
-export const db = getFirestore()
+// export const db = getFirestore()
+export const db = initializeFirestore(app, {
+  experimentalAutoDetectLongPolling: true
+})

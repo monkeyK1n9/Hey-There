@@ -263,8 +263,8 @@ export const MapScreen = ({navigation}) => {
                     initialRegion= {{
                         latitude: userPosition?.latitude || 3,
                         longitude: userPosition?.longitude || 14,
-                        latitudeDelta: 1,
-                        longitudeDelta: 1,
+                        latitudeDelta: 90,
+                        longitudeDelta: 90,
                     }}
                     style={{flex: 1, width: '100%', height: '100%'}}
                 >
