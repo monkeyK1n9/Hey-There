@@ -17,4 +17,7 @@ web-build/
 #config
 google-services.json
 
+#android
+build
+
 

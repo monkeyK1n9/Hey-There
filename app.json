@@ -22,7 +22,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.monkeyk1n9.heythere"
+      "package": "com.monkeyk1n9.heythere",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB2rG_PMUWG9YRt-jHOC892NnF2wnynel0"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -40,11 +45,19 @@
         "projectId": "e0dfad4f-d580-4f37-b5e2-cb0675d29fb0"
       },
       "expo_go": {
-        "runtimeVersion": {  "policy": "sdkVersion"  }
+        "runtimeVersion": {
+          "policy": "sdkVersion"
+        }
       },
-      "build": {  
-        "runtimeVersion": "1.0.0" 
+      "build": {
+        "runtimeVersion": "1.0.0"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e0dfad4f-d580-4f37-b5e2-cb0675d29fb0"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
